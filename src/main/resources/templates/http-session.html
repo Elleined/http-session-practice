@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <title>Http Session</title>
+</head>
+<body>
+<h1 th:text="${name}"></h1>
+<br>
+
+<form method="post" th:action="@{/http-session/save-value-to-session}">
+   <label for="name">Name</label>
+   <input type="text" name="name" id="name" />
+
+   <input type="submit" value="Save to Session"/>
+</form>
+
+<a th:href="@{/http-session/invalidate-session}">Invalidate Session</a>
+
+<br>
+
+<a th:href="@{/http-session/remove-session-attribute}">Remove Session Attribute</a>
+</body>
+</html>
